@@ -6,7 +6,7 @@ A set of tools to extract text from various file formats, run it through SciScor
 
 Should work on any Python 3 verison.
 
- * Install the requires packages with `pip install fasttext spacy numpy requests Unidecode`
+ * Install the requires packages with `pip install fasttext spacy numpy requests Unidecode lxml`
  * `pdftotext` must also be installed from https://www.xpdfreader.com/download.html
  * Obtain the `methods-model.bin` file and place it in the same directory as `pdftools.py`
  * Obtain a `auth.json` file with your SciScore API credentials
@@ -22,4 +22,4 @@ where `report_folder` is the location to accumulate API responses. Then, call `a
 <br>
 When finished with running all your files, call `api.make_csv('out.csv')` to generate a csv with all the results together. Individual reports for each paper are also stored in `report_folder`.
 
-sciscore-tools has utilities for retrieving `.xml` files given a PMID or PMCID from the PMC Open Access subset. First, download `oa_file_list.txt` from the [PMC FTP](https://ftp.ncbi.nlm.nih.gov/pub/pmc/). Then, you can call `api.generate_report_from_pmid('34825147')` for a PMID, or `api.generate_report_from_pmcid('PMC8605177')` for a PMCID. This will do all the processing internally, so you do not have to call `generate_report_from_file` again.
+sciscore-tools has utilities for retrieving `.xml` files given a PMID or PMCID from the PMC Open Access subset. First, download `oa_file_list.txt` from the [PMC FTP](https://ftp.ncbi.nlm.nih.gov/pub/pmc/). Then, you can call `api.generate_report_from_pmid('34825147')` for a PMID, or `api.generate_report_from_pmcid('PMC8605177')` for a PMCID. This will do all the processing internally, so you do not have to call `generate_report_from_file` again. Note that you'll need to create a `packages` subdirectory.
